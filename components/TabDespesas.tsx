@@ -32,7 +32,7 @@ export default function TabDespesas() {
     const top = CATS.flatMap(c => c.itens).sort((a,b) => b.anual - a.anual).slice(0,10)
     const gc = 'rgba(0,0,0,0.05)', tc = '#aaa'
     if (refTop.current) charts.current.push(new Chart(refTop.current, {
-      type: 'bar', indexAxis: 'y',
+      type: 'bar', indexAxis: 'y' as const,
       data: { labels: top.map(i => i.nome), datasets: [{ data: top.map(i => i.anual), backgroundColor: '#4a9de8aa', borderColor: '#4a9de8', borderWidth: 1, borderRadius: 4 }] },
       options: { responsive: true, maintainAspectRatio: false,
         plugins: { legend: { display: false }, tooltip: { callbacks: { label: (ctx) => fmt(ctx.parsed.x) }}},
