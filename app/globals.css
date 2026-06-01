@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #f5f4f0;
+  --surface: #ffffff;
+  --surface2: #f0efe9;
+  --border: rgba(0,0,0,0.08);
+  --text: #1a1917;
+  --text-muted: #6b6a66;
+  --text-faint: #9e9d99;
+  --green: #1a7a55;
+  --green-bg: #e6f4ec;
+  --green-mid: #2ea870;
+  --red: #b83030;
+  --red-bg: #fbeaea;
+  --red-mid: #e05050;
+  --blue: #1a5fa8;
+  --blue-bg: #e6f0fb;
+  --amber: #8a5a00;
+  --amber-bg: #fff3d6;
+  --amber-mid: #d4930a;
+  --orange: #b34a00;
+  --orange-bg: #fff0e6;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.kpi-card { position: relative; overflow: hidden; }
+.kpi-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  border-radius: 12px 12px 0 0;
+}
+.kpi-green::after  { background: #2ea870; }
+.kpi-red::after    { background: #e05050; }
+.kpi-blue::after   { background: #4a9de8; }
+.kpi-amber::after  { background: #d4930a; }
+.kpi-orange::after { background: #e8763a; }
+
+.tab-btn { transition: all 0.15s; }
+.tab-btn.active { background: #1a1917 !important; color: white !important; }
+.tab-btn.active-emerg { background: #b34a00 !important; color: white !important; }
+
+input[type=range] { accent-color: #1a1917; }
