@@ -24,7 +24,7 @@ export default function TabVisaoGeral({ meses }: { meses: MesData[] }) {
     if (refImob.current) charts.current.push(new Chart(refImob.current, {
       type: 'bar',
       data: { labels: MESES, datasets: [{ data: meses.map(m => m.imob_liquido), backgroundColor: meses.map(m => m.imob_liquido > 0 ? '#2ea870' : '#e0ddd5'), borderRadius: 5 }] },
-      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false }, tooltip: { callbacks: { label: (ctx) => ((ctx.parsed.y ?? 0) > 0 ? fmt(ctx.parsed.y ?? 0) : 'Não lançado' }}}, scales: bsc as never }
+      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false }, tooltip: { callbacks: { label: (ctx) => ((ctx.parsed.y ?? 0) > 0 ? fmt(ctx.parsed.y ?? 0) : 'Não lançado') }}}, scales: bsc as never }
     }))
 
     if (refDesp.current) charts.current.push(new Chart(refDesp.current, {
